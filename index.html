@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>纸间研读 · 插画精读与词卡</title><link rel="stylesheet" href="styles.css"></head>
+<body><a class="skip" href="#workspace">跳到学习内容</a><header class="site-head"><div class="top wrap"><a class="brand" href="#room/1/1" aria-label="纸间研读首页"><span class="brandmark" data-icon="book"></span>纸间研读</a><nav aria-label="学习模式"><button id="read-tab"><i data-icon="book"></i>章节精读</button><button id="review-tab"><i data-icon="cards"></i>词卡复习</button></nav><button class="shelf" id="shelf"><i data-icon="library"></i>书架<i data-icon="chev"></i></button></div></header>
+<main class="wrap"><section class="hero" id="hero"><div class="hero-art"><img id="hero-img" alt=""></div><div class="hero-copy"><div class="book-meta" id="book-meta"></div><h1 id="book-title"></h1><div class="book-en" lang="en" id="book-en"></div><p id="book-summary"></p><div class="hero-foot"><button class="primary" id="begin">进入精读<i data-icon="arr"></i></button><span class="book-count" id="book-count"></span></div></div></section>
+<div id="workspace" tabindex="-1"><div class="reading-grid" id="reading"><aside class="side"><div class="side-head"><i data-icon="list"></i><h2>章节目录</h2><button id="fold" aria-expanded="false">展开<i data-icon="chev"></i></button></div><div id="chapter-list"></div></aside><section id="lesson" class="lesson" aria-label="精读卡片"></section></div><section id="review" hidden></section></div></main>
+<footer class="wrap foot"><span><i data-icon="book"></i>纸间研读</span><span>阅读笔记 · 语境词卡</span></footer>
+<dialog id="menu" aria-labelledby="dialog-title"><div class="dialogtop"><h2 id="dialog-title">我的书架</h2><button data-close class="iconbtn" aria-label="关闭"><i data-icon="x"></i></button></div><div id="dialog-content"></div></dialog>
+<script src="./纸间研读语音/index.js"></script><script src="data/book.js"></script>
+<script src="data/index.js"></script>
+<script src="data/images.js"></script>
+<script src="data/word-asset-ids.js"></script>
+<script src="data/basic-meanings.js"></script>
+<script src="data/word-images.js"></script>
+<script src="bootstrap.js"></script>
+<script src="app.js"></script></body></html>
