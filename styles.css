@@ -188,3 +188,25 @@
 .vocab-backup label{position:relative}.vocab-backup label:focus-within{outline:2px solid var(--moss)}
 .vocab-backup input{position:absolute;inset:0;opacity:0;width:100%;cursor:pointer}
 @media(max-width:600px){.vocab-list li{grid-template-columns:minmax(0,1fr) clamp(64px,20vw,96px) auto;grid-template-areas:"word art known" "meaning art known";gap:2px 9px}.vocab-word{align-self:end;font-size:16px}.vocab-meaning{align-self:start}.vocab-known{padding:4px 9px}}
+
+/* 本地双语版可从插画下直接打开对应段落与卷首材料。 */
+.hero[data-book="orlando"]{background:#ece9df}
+.hero[data-book="orlando"] .hero-art img{object-position:52% 39%}
+/* 只给插图收一收颜色，字幕、深色底框和黄色词义标记保持各自的颜色。 */
+.pilot-notes .or-readlinks{margin-top:1.2rem}
+.pilot-translation [data-zh-mode="group"]::before{content:"句组合译";margin-right:.55em;color:var(--muted);font:.75rem/1.45 var(--sans)}
+.edition-parts .topic:is(:hover,:focus-visible){background:var(--sage)}
+.edition-part{margin-top:.8rem}
+.or-readlinks,.source-tools,.source-tools>div{display:flex;gap:.55rem;flex-wrap:wrap}
+.source-tools{justify-content:space-between;align-items:center}
+.source-tools button{border:1px solid var(--line);border-radius:6px;background:var(--surface);font:inherit;color:var(--ink);padding:.3em .7em}
+.source-tools button[aria-pressed=true]{background:var(--moss);color:#fff}
+.source-credit{margin:.55rem 0;color:var(--muted);font-size:.91rem;line-height:1.6}
+.source-scroll{position:relative;max-height:min(55vh,38rem);overflow:auto;overscroll-behavior:contain;padding:.3rem .55rem .5rem 0;border-top:1px solid var(--line)}
+.source-scroll p{padding:.2rem .7rem;margin:.6rem 0;font:1.08rem/1.8 var(--serif);white-space:pre-line}
+.source-scroll .source-quote{background:#f5ebcf;border-left:3px solid #a87629}
+@media(max-width:560px){
+ .source-scroll{max-height:53dvh}
+}
+
+a.shelf-entry{color:var(--ink);text-decoration:none;font:inherit}a.shelf-entry:hover{border-color:var(--rust)}
