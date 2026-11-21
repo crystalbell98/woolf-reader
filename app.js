@@ -19,10 +19,11 @@ let narrationControl=null;
 let endNarration=null;
 let recordingPlayer=null;
 function recordingIndex(id){
- if(id?.startsWith('dalloway.'))return undefined;
+ if(id?.startsWith('dalloway.'))return window.paperStudyDallowayAudio;
  return id?.startsWith('orlando.')?window.paperStudyOrlandoAudio:window.paperStudyAudio;
 }
 function recordingFolder(id){
+ if(id?.startsWith('dalloway.'))return '达洛维夫人语音';
  return id?.startsWith('orlando.')?'奥兰多语音':'纸间研读语音';
 }
 function stopNarration(){
@@ -67,8 +68,10 @@ function speakWithSystem(text,button){
 function recordedExcerpt(id,first=null,last=null,fromStart=false,toEnd=false){
  const track=recordingIndex(id)?.tracks[id];
  if(!track)return null;
- return {file:track.file,folder:recordingFolder(id),start:fromStart?0:track.words[first]?.[0]??0,
-  end:toEnd?track.duration:track.words[last]?.[1]??track.duration};
+ // 达洛维夫人的意群共用整段录音，start/end 是这一截在整段录音里的起止；其他书一句一个文件，没有这两项
+ const from=track.start??0,to=track.end??track.duration;
+ return {file:track.file,folder:recordingFolder(id),start:fromStart?from:track.words[first]?.[0]??from,
+  end:toEnd?to:track.words[last]?.[1]??to};
 }
 function narrate(excerpt,button){
  stopNarration();
